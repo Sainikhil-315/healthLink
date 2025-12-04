@@ -1,0 +1,43 @@
+# Node modules
+node_modules/
+
+# Build artifacts
+android/.gradle/
+android/app/build/
+android/build/
+ios/build/
+ios/Pods/
+
+# IDE/editor
+.vscode/
+.idea/
+
+# React Native
+.expo/
+.expo-shared/
+.bundle/
+.watchmanconfig
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment
+.env
+.env.local
+.env.*.local
+.env.example
+
+# Misc
+*.log
+*.keystore
+*.jks
+*.pem
+*.p12
+*.key
+*.crt
+*.cert
+*.mobileprovision

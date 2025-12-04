@@ -1,0 +1,4 @@
+D:/MERN/MindSprint-2k25/client/android/app/.cxx/Debug/2qs6i4t2/armeabi-v7a/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/foo.dir
+D:/MERN/MindSprint-2k25/client/android/app/.cxx/Debug/2qs6i4t2/armeabi-v7a/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/boo.dir
+D:/MERN/MindSprint-2k25/client/android/app/.cxx/Debug/2qs6i4t2/armeabi-v7a/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/edit_cache.dir
+D:/MERN/MindSprint-2k25/client/android/app/.cxx/Debug/2qs6i4t2/armeabi-v7a/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/rebuild_cache.dir
