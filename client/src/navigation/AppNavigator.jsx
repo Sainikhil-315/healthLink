@@ -6,7 +6,9 @@ import { View, ActivityIndicator } from 'react-native';
 import useAuthStore from '../store/authStore';
 import AuthNavigator from './AuthNavigator';
 import UserNavigator from './UserNavigator';
-import { COLORS } from '../utils/constants';
+import AmbulanceNavigator from './AmbulanceNavigator';
+import HospitalNavigator from './HospitalNavigator';
+import { COLORS, USER_ROLES } from '../utils/constants';
 
 const Stack = createStackNavigator();
 
@@ -17,7 +19,7 @@ const LoadingScreen = () => (
 );
 
 const AppNavigator = () => {
-  const { isAuthenticated, isLoading, loadStoredAuth } = useAuthStore();
+  const { isAuthenticated, isLoading, loadStoredAuth, user } = useAuthStore();
 
   useEffect(() => {
     loadStoredAuth();
@@ -27,11 +29,36 @@ const AppNavigator = () => {
     return <LoadingScreen />;
   }
 
+  // Determine which navigator to show based on user role
+  const getRoleNavigator = () => {
+    if (!user) return UserNavigator;
+
+    switch (user.role) {
+      case USER_ROLES.AMBULANCE:
+        return AmbulanceNavigator;
+      case USER_ROLES.HOSPITAL:
+        return HospitalNavigator;
+      case USER_ROLES.VOLUNTEER:
+        // return VolunteerNavigator; // TODO: Implement
+        return UserNavigator;
+      case USER_ROLES.DONOR:
+        // return DonorNavigator; // TODO: Implement
+        return UserNavigator;
+      case USER_ROLES.ADMIN:
+        // return AdminNavigator; // TODO: Implement
+        return UserNavigator;
+      default:
+        return UserNavigator;
+    }
+  };
+
+  const MainNavigator = getRoleNavigator();
+
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {isAuthenticated ? (
-          <Stack.Screen name="Main" component={UserNavigator} />
+          <Stack.Screen name="Main" component={MainNavigator} />
         ) : (
           <Stack.Screen name="Auth" component={AuthNavigator} />
         )}

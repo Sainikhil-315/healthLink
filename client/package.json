@@ -24,6 +24,7 @@
     "expo-image-picker": "~14.7.0",
     "expo-location": "~16.5.0",
     "expo-notifications": "~0.27.0",
+    "expo-splash-screen": "^31.0.11",
     "expo-status-bar": "~1.11.1",
     "react": "19.1.1",
     "react-hook-form": "^7.49.2",
