@@ -8,6 +8,9 @@ import AuthNavigator from './AuthNavigator';
 import UserNavigator from './UserNavigator';
 import AmbulanceNavigator from './AmbulanceNavigator';
 import HospitalNavigator from './HospitalNavigator';
+import VolunteerNavigator from './VolunteerNavigator';
+import DonorNavigator from './DonorNavigator';
+import AdminNavigator from './AdminNavigator';
 import { COLORS, USER_ROLES } from '../utils/constants';
 
 const Stack = createStackNavigator();
@@ -39,14 +42,12 @@ const AppNavigator = () => {
       case USER_ROLES.HOSPITAL:
         return HospitalNavigator;
       case USER_ROLES.VOLUNTEER:
-        // return VolunteerNavigator; // TODO: Implement
-        return UserNavigator;
+        return VolunteerNavigator;
       case USER_ROLES.DONOR:
-        // return DonorNavigator; // TODO: Implement
-        return UserNavigator;
+        return DonorNavigator;
       case USER_ROLES.ADMIN:
-        // return AdminNavigator; // TODO: Implement
-        return UserNavigator;
+        return AdminNavigator;
+      case USER_ROLES.USER:
       default:
         return UserNavigator;
     }
